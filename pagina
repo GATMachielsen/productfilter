@@ -19,16 +19,13 @@ const Courses = () => {
   
   
 
-//   const { text } = search;
-
-  useEffect(() => {
-    loadCourses();
+useEffect(() => {
+   loadCourses();
     // fetch categories
-    loadCategories();
+   loadCategories();
 }, []);
 
   const loadCourses = async () => {
-
     const { data } = await axios.get("/api/courses");
     console.log(data, "daasdada courses");
     setCourses(data);
@@ -40,7 +37,6 @@ const Courses = () => {
     setCategories(data);
     console.log(data, "categpries");
     console.log(categories, "ccategproes")
-
   }
 
   const fetchCourses = async (arg) => {
@@ -50,29 +46,12 @@ const Courses = () => {
       console.log(c.data, "cccccc");
       setCourses(c.data)
     });
-    // setCourses(filterresults);
-    // console.log(filterresults, "filteresults???")
-    // setCourses(filterresults);
-    // .then((c) => {
-    //   console.log(c, "cccccc");
-    //   setCourses(c)
-    // });
-    //  axios.post("/api/search/courses", arg)
-      // console.log(c.data, "resdatadada");
+ 
   
     console.log(courses, "courses")
     console.log(courses.name, "course imagegememgegmge");
-    // console.log(courses.data.image.Location, "course image location,,,,,,");
   };
 
-
-  // const fetchCoursesByFilter = async (arg) => {
-  //        axios.post("/api/search/courses", arg)
-  // }
-
-  // useEffect(() => {
-  //   fetchCourses({ categoryIds });
-  // });
 
  
 
